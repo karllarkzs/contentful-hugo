@@ -1,0 +1,70 @@
+ <div class='freshwp-sidebar-two-wrapper' id='freshwp-sidebar-two-wrapper' itemscope='itemscope' itemtype='http://schema.org/WPSideBar' role='complementary'>
+    <div class='theiaStickySidebar'>
+        <div class='freshwp-sidebar-two-wrapper-inside clearfix'>
+            <div class='freshwp-sidebar-content' id='freshwp-right-sidebar'>
+                <div id="text-16" class="widget-updated freshwp-side-widget widget freshwp-box widget_text">
+                    <h2 class="freshwp-widget-title"><span>最近の更新ページ</span></h2>
+                    <div class="textwidget">
+                        {{range .Site.RegularPages}}
+                        <div class='whatsnew'>
+                            <a href="{{ .RelPermalink }}">
+                                                            {{ .Title }}
+                                                        </a>
+                        </div>
+                        <hr/> {{end}}
+                    </div>
+
+                </div>
+                <div id="recent-posts-2" class="widget-updated freshwp-side-widget widget freshwp-box widget_recent_entries">
+                    <h2 class="freshwp-widget-title"><span>最近の投稿</span></h2>
+                    <ul>
+                        <li>
+                            <a href="https://game.atwiki.jp/azurlane-cw/6053">エクストリームバトルの報酬一覧</a>
+                        </li>
+                        <li>
+                            <a href="https://game.atwiki.jp/azurlane-cw/5153">用語集等</a>
+                        </li>
+                        <li>
+                            <a href="https://game.atwiki.jp/azurlane-cw/5895">対空の強化に必要な素材(対空パーツ)一覧</a>
+                        </li>
+                        <li>
+                            <a href="https://game.atwiki.jp/azurlane-cw/5890">設備の強化に必要な素材(汎用パーツ)一覧</a>
+                        </li>
+                        <li>
+                            <a href="https://game.atwiki.jp/azurlane-cw/5878">航空機の強化に必要な素材(艦載機パーツ)一覧</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="text-11" class="widget-updated freshwp-side-widget widget freshwp-box widget_text">
+                    <h2 class="freshwp-widget-title"><span>リンク</span></h2>
+                    <div class="textwidget">
+                        <p><a href="https://www.compileheart.com/alcw/">公式ページ</a></p>
+                        <p><a href="https://www.compileheart.com/">販売元ページ</a></p>
+                        <p><a href="http://felistella.co.jp/">開発元ページ</a></p>
+                    </div>
+                </div>
+                <div id="archives-2" class="widget-updated freshwp-side-widget widget freshwp-box widget_archive">
+                    <h2 class="freshwp-widget-title"><span>アーカイブ</span></h2>
+                    <ul>
+                        <li><a href='https://game.atwiki.jp/azurlane-cw/date/2019/09'>2019年9月</a></li>
+                        <li><a href='https://game.atwiki.jp/azurlane-cw/date/2019/08'>2019年8月</a></li>
+                        <li><a href='https://game.atwiki.jp/azurlane-cw/date/2019/07'>2019年7月</a></li>
+                    </ul>
+                </div>
+                <div id="text-12" class="widget-updated freshwp-side-widget widget freshwp-box widget_text">
+                    <h2 class="freshwp-widget-title"><span>Twitter情報</span></h2>
+                    <div class="textwidget">
+                        <p>
+                            <a class="twitter-timeline" href="https://twitter.com/CompileHeartWeb" data-height="800" data-theme="light" data-chrome="noheader nofooter">
+                                                        <br /> Tweets by Pokemon_cojp
+                                                        <br />
+                                                    </a>
+                            <br />
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

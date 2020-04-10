@@ -1,0 +1,419 @@
+<head>
+    <title>
+        {{ if .IsHome}} {{ .Site.Title }} | Home {{ else }} {{ .Site.Title }} | {{ .Title }} {{ end }}
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <link rel="stylesheet" type="text/css" href="/css/editor-style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+    <style id='ez-toc-inline-css' type='text/css'>
+        div#ez-toc-container p.ez-toc-title {
+            font-size: 120%;
+        }
+        
+        div#ez-toc-container p.ez-toc-title {
+            font-weight: 400;
+        }
+        
+        div#ez-toc-container ul li {
+            font-size: 95%;
+        }
+        
+        div#ez-toc-container {
+            background: #f9f9f9;
+            border: 1px solid #dddddd;
+            width: 100%;
+        }
+        
+        div#ez-toc-container p.ez-toc-title {
+            color: #444444;
+        }
+        
+        div#ez-toc-container ul.ez-toc-list a {
+            color: #428bca;
+        }
+        
+        div#ez-toc-container ul.ez-toc-list a:hover {
+            color: #2a6496;
+        }
+        
+        div#ez-toc-container ul.ez-toc-list a:visited {
+            color: #428bca;
+        }
+
+        img#wpstats {
+            display: none
+        }
+    </style>
+
+    <style type="text/css">
+        body {}
+        
+        h1 {}
+        
+        h2 {}
+        
+        h3 {}
+        
+        h4 {}
+        
+        h5 {}
+        
+        h6 {}
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {}
+        
+        .freshwp-site-title {}
+        
+        .freshwp-site-description {}
+        
+        .freshwp-nav-menu a {}
+        
+        .entry-title {}
+        
+        .freshwp-posts .freshwp-posts-heading,
+        .freshwp-sidebar-content .freshwp-widget-title,
+        .freshwp-featured-posts-area .widget .freshwp-widget-title {}
+        
+        #freshwp-footer-widgets .freshwp-widget-title {}
+        
+        .freshwp-featured-post-title,
+        .freshwp-popular-post .freshwp-popular-post-title,
+        .freshwp-recent-post .freshwp-recent-post-title,
+        .freshwp-random-post .freshwp-random-post-title,
+        .freshwp-carousel-title {}
+        
+        .freshwp-featured-post:first-child .freshwp-featured-post-title,
+        .freshwp-full-post-title,
+        .freshwp-standard-post-title,
+        .freshwp-list-post-title,
+        .freshwp-grid-post-title,
+        .freshwp-cgrid-post-title {}
+        
+        .freshwp-featured-post-categories a,
+        .freshwp-full-post-categories a,
+        .freshwp-standard-post-categories a,
+        .freshwp-cstandard-post-categories a,
+        .freshwp-list-post-categories a,
+        .freshwp-grid-post-categories a,
+        .freshwp-cgrid-post-categories a {}
+        
+        .freshwp-entry-meta-single,
+        .freshwp-featured-post-footer,
+        .freshwp-full-post-footer,
+        .freshwp-standard-post-footer,
+        .freshwp-list-post-footer,
+        .freshwp-grid-post-footer,
+        .freshwp-cgrid-post-footer,
+        .freshwp-popular-entry-meta,
+        .freshwp-recent-entry-meta,
+        .freshwp-random-entry-meta {}
+        
+        .freshwp-standard-post-read-more,
+        .freshwp-list-post-read-more,
+        .freshwp-grid-post-read-more,
+        .freshwp-cgrid-post-read-more {}
+    </style>
+    <style type="text/css">
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            color: #444444
+        }
+        
+        a {
+            color: #409bd4
+        }
+        
+        a:hover {
+            color: #005599
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #444444
+        }
+        
+        .freshwp-nav-primary {
+            background: #024984
+        }
+        
+        .freshwp-nav-primary {
+            border: 1px solid #555555;
+        }
+        
+        .freshwp-nav-menu a:hover,
+        .freshwp-nav-menu .current-menu-item > a,
+        .freshwp-nav-menu .sub-menu .current-menu-item > a:hover,
+        .freshwp-nav-menu .current_page_item > a,
+        .freshwp-nav-menu .children .current_page_item > a:hover {
+            background: #1cb7d8
+        }
+        
+        .freshwp-nav-menu .sub-menu a,
+        .freshwp-nav-menu .children a {
+            border: 1px solid #70bbe5;
+            border-top: none;
+        }
+        
+        .freshwp-nav-menu .sub-menu li:first-child a,
+        .freshwp-nav-menu .children li:first-child a {
+            border-top: 1px solid #70bbe5;
+        }
+        
+        .freshwp-nav-menu > li > a {
+            border-right: 1px solid #70bbe5;
+        }
+        
+        .freshwp-nav-menu > li:first-child > a {
+            border-left: 0px solid #70bbe5;
+        }
+        
+        .entry-title,
+        .entry-title a {
+            color: #000000;
+        }
+        
+        .freshwp-featured-post-title,
+        .freshwp-featured-post-title a {
+            color: #000000 !important;
+        }
+        
+        .freshwp-full-post-title,
+        .freshwp-full-post-title a {
+            color: #000000 !important;
+        }
+        
+        .freshwp-standard-post-title,
+        .freshwp-standard-post-title a {
+            color: #000000 !important;
+        }
+        
+        .freshwp-list-post-title,
+        .freshwp-list-post-title a {
+            color: #000000 !important;
+        }
+        
+        .freshwp-grid-post-title,
+        .freshwp-grid-post-title a {
+            color: #000000 !important;
+        }
+        
+        .freshwp-popular-post .freshwp-popular-post-title,
+        .freshwp-popular-post .freshwp-popular-post-title a {
+            color: #000000 !important;
+        }
+        
+        .freshwp-recent-post .freshwp-recent-post-title,
+        .freshwp-recent-post .freshwp-recent-post-title a {
+            color: #000000 !important;
+        }
+        
+        .freshwp-random-post .freshwp-random-post-title,
+        .freshwp-random-post .freshwp-random-post-title a {
+            color: #000000 !important;
+        }
+        
+        .freshwp-featured-post-categories a {
+            color: #ffffff !important;
+        }
+        
+        .freshwp-full-post-categories a {
+            color: #ffffff !important;
+        }
+        
+        .freshwp-standard-post-categories a {
+            color: #ffffff !important;
+        }
+        
+        .freshwp-cstandard-post-categories a {
+            color: #ffffff !important;
+        }
+        
+        .freshwp-list-post-categories a {
+            color: #ffffff !important;
+        }
+        
+        .freshwp-grid-post-categories a {
+            color: #ffffff !important;
+        }
+        
+        .freshwp-cgrid-post-categories a {
+            color: #ffffff !important;
+        }
+        
+        .freshwp-featured-post-categories a {
+            background: #ea5678 !important;
+        }
+        
+        .freshwp-full-post-categories a {
+            background: #ea5678 !important;
+        }
+        
+        .freshwp-standard-post-categories a {
+            background: #ea5678 !important;
+        }
+        
+        .freshwp-cstandard-post-categories a {
+            background: #ea5678 !important;
+        }
+        
+        .freshwp-list-post-categories a {
+            background: #ea5678 !important;
+        }
+        
+        .freshwp-grid-post-categories a {
+            background: #ea5678 !important;
+        }
+        
+        .freshwp-cgrid-post-categories a {
+            background: #ea5678 !important;
+        }
+        
+        .freshwp-standard-post-read-more a {
+            background: #10509d !important;
+        }
+        
+        .freshwp-list-post-read-more a {
+            background: #10509d !important;
+        }
+        
+        .freshwp-grid-post-read-more a {
+            background: #10509d !important;
+        }
+        
+        .freshwp-standard-post-read-more a:hover {
+            color: #10509d !important;
+        }
+        
+        .freshwp-list-post-read-more a:hover {
+            color: #10509d !important;
+        }
+        
+        .freshwp-grid-post-read-more a:hover {
+            color: #10509d !important;
+        }
+        
+        .freshwp-standard-post-read-more a:hover {
+            background: #ffffff !important;
+        }
+        
+        .freshwp-list-post-read-more a:hover {
+            background: #ffffff !important;
+        }
+        
+        .freshwp-grid-post-read-more a:hover {
+            background: #ffffff !important;
+        }
+        
+        .freshwp-sidebar-content .freshwp-widget-title {
+            border-bottom: 2px solid #005f7e;
+        }
+        
+        .freshwp-sidebar-content .freshwp-widget-title span {
+            background: #005f7e;
+        }
+        
+        #freshwp-copyrights,
+        #freshwp-credits {
+            background: #031951;
+        }
+        
+        #freshwp-copyrights {
+            border-top: 1px solid #031951;
+        }
+        
+        .freshwp-box {
+            border-top: 1px solid #cccccc;
+        }
+    </style>
+    <style type="text/css" id="custom-background-css">
+        body.custom-background {
+            background-color: #f0f0f0;
+            background-image: url("https://game.atwiki.jp/azurlane-cw/wp-content/themes/freshwp-pro/assets/images/background.png");
+            background-position: left top;
+            background-size: auto;
+            background-repeat: repeat;
+            background-attachment: fixed;
+        }
+    </style>
+    <style type="text/css" media="print">
+        #wpadminbar {
+            display: none;
+        }
+    </style>
+
+    <style type='text/css'>
+        #wpadminbar .quicklinks li#wp-admin-bar-stats {
+            height: 32px;
+        }
+        
+        #wpadminbar .quicklinks li#wp-admin-bar-stats a {
+            height: 32px;
+            padding: 0;
+        }
+        
+        #wpadminbar .quicklinks li#wp-admin-bar-stats a div {
+            height: 32px;
+            width: 95px;
+            overflow: hidden;
+            margin: 0 10px;
+        }
+        
+        #wpadminbar .quicklinks li#wp-admin-bar-stats a:hover div {
+            width: auto;
+            margin: 0 8px 0 10px;
+        }
+        
+        #wpadminbar .quicklinks li#wp-admin-bar-stats a img {
+            height: 24px;
+            margin: 4px 0;
+            max-width: none;
+            border: none;
+        }
+    </style>
+    <style type="text/css" id="wp-custom-css">
+        .freshwp-box,
+        .freshwp-nav-primary {
+            border: none;
+        }
+        /*ヘッダーテキストの幅調整*/
+        
+        #freshwp-logo {
+            width: auto;
+            max-width: 80%;
+        }
+        /*「続きを読む」の見た目調整*/
+        
+        .freshwp-list-post-read-more a {
+            border: 1px solid #10509d;
+        }
+        /*検索アイコンの背景色変更*/
+        
+        .freshwp-search-submit {
+            background-color: #005599
+        }
+        /* ハンバーガーアイコン調整 */
+        
+        .freshwp-responsive-menu-icon {
+            text-align: left;
+            margin-left: 1.5em;
+        }
+    </style>
+
+</head>

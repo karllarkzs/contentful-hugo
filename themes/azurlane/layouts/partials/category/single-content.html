@@ -1,0 +1,89 @@
+{{- partial "open-wrapper.html" . -}}
+
+{{ $filename := .File.TranslationBaseName }}
+{{$cat := where .Site.RegularPages "Section" "category"}}
+
+<div class="freshwp-main-wrapper" id="freshwp-main-wrapper" itemscope="itemscope" itemtype="http://schema.org/Blog" role="main" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+<div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+<div class="freshwp-main-wrapper-inside clearfix">
+
+
+
+<div class="freshwp-featured-posts-area clearfix">
+<div id="text-23" class="freshwp-main-widget widget freshwp-box widget_text">            
+  <div class="textwidget"><span><span><a href="https://game.atwiki.jp/azurlane-cw">トップ</a> &gt; <span class="breadcrumb_last" aria-current="page">商品情報</span></span></span>
+
+
+<div class="freshwp-posts-wrapper" id="freshwp-posts-wrapper">
+
+<div class="freshwp-posts freshwp-box">
+        
+<header class="page-header">
+<h1 class="page-title">カテゴリー: {{.Title}}</h1></header>        
+
+
+       
+<div id="post-1051" class="freshwp-list-post">
+   {{ range $posts :=  where .Site.RegularPages "Type" "posts"}}
+
+    {{ range $posts.Params.category }}
+          {{ $catID := .id }}
+          {{ if eq $catID $filename }}
+       <div class="freshwp-posts-container">
+         <div class="freshwp-posts-content">
+               {{range $posts.Params.media}}
+            <div class="freshwp-list-post-thumbnail">
+        <a href="https://game.atwiki.jp/azurlane-cw/1051" title="Permanent Link to 公式PV"><img src="{{.url}}"width="480" height="360"  class="freshwp-list-post-thumbnail-img wp-post-image" alt=""></a>
+        
+    </div>
+     
+    <div class="freshwp-list-post-details">  
+      {{range $posts.Params.category}}
+      {{ $category := $posts.GetPage (printf "%s/%s.md" .contentType .id) }}  
+    <div class="freshwp-list-post-categories"><span class="screen-reader-text">Posted in</span><a href="/posts" rel="category tag">{{ $category.Title }}</a></div>
+        {{end}}
+    <h3 class="freshwp-list-post-title"> <a href="{{ .RelPermalink }}">{{ $posts.Title }}</a></h3>
+            <div class="freshwp-list-post-footer">
+        <span class="freshwp-list-post-date freshwp-list-post-meta">{{ $posts.Date}}</span>        </div>
+    
+    <div class="freshwp-list-post-snippet">{{ $posts.Description}}
+</div>
+    <div class="freshwp-list-post-read-more"><a href="{{ .RelPermalink }}">続きを読む</a></div>
+        </div>
+        
+</div>
+        </div>
+        {{end}}
+        {{end}}
+        {{end}}
+  
+
+    
+
+
+</div>
+{{end}}
+</div>
+
+</div><!--/#freshwp-posts-wrapper -->
+
+
+<div class="freshwp-featured-posts-area clearfix">
+
+
+
+</div>
+</div>
+        </div></div>
+<div class="resize-sensor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all 0s ease 0s; width: 550px; height: 3176px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div>
+
+
+
+
+
+
+<!-- dynamics -->
+<!-- sidebars -->
+{{- partial "sidebar-1.html" . -}} {{- partial "sidebar-2.html" . -}}
+<!-- sidebars -->
+{{- partial "closed-wrapper.html" . -}}

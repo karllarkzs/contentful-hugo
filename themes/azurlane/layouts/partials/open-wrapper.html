@@ -1,0 +1,69 @@
+<div class='freshwp-wrapper'>
+
+    <div class='freshwp-header-outer-container'>
+        <div class='freshwp-container'>
+            {{- partial "header.html" . -}}
+            <div class="freshwp-header-container" id="freshwp-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
+                <div class="clearfix" id="freshwp-head-content">
+
+                    <div class="freshwp-header-image clearfix">
+                        <a href="https://game.atwiki.jp/azurlane-cw/" rel="home" class="freshwp-header-img-link">
+                                <img src="https://game-img.atwiki.jp/content/uploads/sites/5/2019/09/04095406/cropped-top_azuren.jpg" width="1270" height="462" alt="" class="freshwp-header-img" />
+                            </a>
+                    </div>
+
+                    <div class="freshwp-header-inside clearfix">
+                        <div id="freshwp-logo">
+
+                            <div class="site-branding">
+                                <h1 class="freshwp-site-title"><a href="https://game.atwiki.jp/azurlane-cw/" rel="home">アズールレーン クロスウェーブ攻略</a></h1>
+                                <p class="freshwp-site-description"></p>
+                            </div>
+
+                        </div>
+                        <!--/#freshwp-logo -->
+
+                        <div id="freshwp-header-banner">
+                            <div id="search-2" class="freshwp-header-widget widget widget_search">
+                                <form role="search" method="get" class="freshwp-search-form" action="https://game.atwiki.jp/azurlane-cw/">
+                                    <label>
+                                            <span class="screen-reader-text">Search for:</span>
+                                            <input type="search" class="freshwp-search-field" placeholder="検索 &hellip;" value="" name="s" />
+                                        </label>
+                                    <button class="freshwp-search-submit" type="submit"> <i class="fa fa-search" value="検索"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <!--/#freshwp-header-banner -->
+                    </div>
+
+                </div>
+                <!--/#freshwp-head-content -->
+            </div>
+            <!--/#freshwp-header -->
+        </div>
+    </div>
+
+    <div class='freshwp-menu-outer-container'>
+        <div class='freshwp-container'>
+            <nav class="freshwp-nav-primary" id="freshwp-primary-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+                <div class="menu-top-menu-container">
+                  
+                    <ul id="menu-primary-navigation" class="menu freshwp-nav-menu menu-primary">
+                      
+                        <li id="menu-item-1724" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1724"><a href="/" aria-current="page">ホーム</a></li>
+                        {{ range where .Site.RegularPages "Section" "category"}}
+                        <li id="menu-item-3597" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3597"><a href="{{.RelPermalink}}">{{.Title}}</a></li>
+                        
+                        {{end}}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class='freshwp-content-outer-container'>
+        <div class='freshwp-container'>
+            <div id='freshwp-content-wrapper'>
+
+                <div id='freshwp-content-inner-wrapper'>
+

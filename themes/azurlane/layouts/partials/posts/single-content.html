@@ -1,0 +1,38 @@
+{{- partial "open-wrapper.html" . -}}
+{{ $cat := where .Site.RegularPages "Type" "category" }}
+<!-- dynamics -->
+<div class="freshwp-main-wrapper" id="freshwp-main-wrapper" itemscope="itemscope" itemtype="http://schema.org/Blog" role="main" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+  <div href="{{ .RelPermalink }}" style="border-bottom: 1px solid #000;padding: 20px;margin: 10px 0;display:block;">
+    <h3>Title: {{ .Title }}</h3>
+
+    {{ range .Params.media }}
+    <img src="{{ .url }}">
+    {{ end }}
+
+    <div>
+      {{ range .Params.category }}
+      {{ $catID := .id }}
+      {{ range $cat }}
+      {{ if eq $catID .File.TranslationBaseName }}
+      <a href="{{ .RelPermalink }}" style="background-color: blue; padding: 5px; display: inline-block;color: #fff; margin: 0 5px 0 0;">{{ .Title }}</a>
+      {{ end }}
+      {{ end }}
+    {{ end }}
+    </div>
+
+    <p>Description: {{ .Description }}</p>
+    <p>Content Value:</p>
+
+    {{ range .Params.body }}
+    {{ range .content }}
+    <p>{{ .value }}</p>
+    {{ end }}
+    {{ end }}
+
+  </div>
+</div>
+<!-- dynamics -->
+<!-- sidebars -->
+{{- partial "sidebar-1.html" . -}} {{- partial "sidebar-2.html" . -}}
+<!-- sidebars -->
+{{- partial "closed-wrapper.html" . -}}
