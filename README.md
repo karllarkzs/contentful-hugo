@@ -1,4 +1,3 @@
-# hugo-game-atwiki
 
 static site
 
